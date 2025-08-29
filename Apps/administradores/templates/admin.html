@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio</title>
+</head>
+
+<body>
+    <h1>Administracion</h1>
+    <ul>
+        <li><a href="{% url 'home:homeapp' %}">HOME</a></li>
+        <li><a href="{% url 'estudiantes:estuapp' %}">ESTUDIANTES</a></li>
+        <li><a href="{% url 'administradores:adminapp' %}">ADMINISTRADORES</a></li>
+        <li><a href="{% url 'informacion:infoapp' %}">ACERCA DE</a></li>
+    </ul>
+
+    <h2>LISTA DE ADMINISTRADORES</h2>
+    <table border="1">
+        <tr>
+            <th>NOMBRE</th>
+            <th>EDAD</th>
+            <th>DEPARTAMENTO</th>
+        </tr>
+        <tr>
+            <th>JUAN</th>
+            <th>28</th>
+            <th>CONTABILIDAD</th>
+        </tr>
+        <tr>
+            <th>INGRID</th>
+            <th>25</th>
+            <th>ADMINISTRACION</th>
+        </tr>
+        <tr>
+            <th>MARIA</th>
+            <th>24</th>
+            <th>GERENCIA</th>
+        </tr>
+        <tr>
+            <th>ANGEL</th>
+            <th>30</th>
+            <th>SOPORTE TECNICO</th>
+        </tr>
+        <tr>
+            <th>JHONATAN</th>
+            <th>36</th>
+            <th>LIMPIEZA</th>
+        </tr>
+    </table>
+</body>
+
+</html>

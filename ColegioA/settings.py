@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# YA RENDERIZAN TODOS LOS DIRECTORIOS, hay que hacer el home y las redirecciones con referencias o botones...
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,8 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apps.home',
-    'Apps.inrofmacion',
     'Apps.principal',
+    'Apps.informacion',
+    'Apps.estudiantes',
+    'Apps.administradores',
+
+
 
 ]
 

@@ -16,13 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Apps.informacion import views
+from .views import InfoView
 
+app_name='informacion'
 urlpatterns = [
-    path('', include('Apps.home.urls')),
-    path('admin/', admin.site.urls),
-    path('home/', include('Apps.home.urls', 'home')),
-    path('informacion/', include('Apps.informacion.urls', 'informacion')),
-    path('estudiantes/', include('Apps.estudiantes.urls', 'estudiantes')),
-    path('administradores/', include('Apps.administradores.urls', 'administradores')),
-
+    path('', InfoView.as_view(), name='infoapp')
 ]
