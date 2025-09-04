@@ -1,51 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colegio</title>
-</head>
-<body>
-        <h1>ESTUDIANTES</h1>
-        <ul>
-            <li><a href="{% url 'home:homeapp' %}">HOME</a></li>
-            <li><a href="{% url 'estudiantes:estuapp' %}">ESTUDIANTES</a></li>
-            <li><a href="{% url 'administradores:adminapp' %}">ADMINISTRADORES</a></li>
-            <li><a href="{% url 'informacion:infoapp' %}">ACERCA DE</a></li>
-        </ul>
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>LISTADO DE ESTUDIANTES</h2>
+<table border="1">
+    <div>
+        <table class="table">
+            <thead>
 
-        <h2>LISTADO DE ESTUDIANTES</h2>
-    <table border="1">
-        <tr>
-            <th>NOMBRE</th>
-            <th>EDAD</th>
-            <th>CURSO</th>
-        </tr>
-        <tr>
-            <th>JOSE</th>
-            <th>26</th>
-            <th>MATEMATICAS</th>
-        </tr>
-        <tr>
-            <th>DANIEL</th>
-            <th>25</th>
-            <th>BASES DE DATOS I</th>
-        </tr>
-        <tr>
-            <th>ANA</th>
-            <th>25</th>
-            <th>DESARROLLO WEB</th>
-        </tr>
-        <tr>
-            <th>CARLOS</th>
-            <th>27</th>
-            <th>ALGORITMOS</th>
-        </tr>
-        <tr>
-            <th>ESTEBAN</th>
-            <th>30</th>
-            <th>SEMINARIO</th>
-        </tr>
-    </table>
-</body>
-</html>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>EDAD</th>
+                    <th>CURSO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>JOSE</th>
+                    <th>26</th>
+                    <th>MATEMATICAS</th>
+                </tr>
+                <tr>
+                    <th>DANIEL</th>
+                    <th>25</th>
+                    <th>BASES DE DATOS I</th>
+                </tr>
+                <tr>
+                    <th>ANA</th>
+                    <th>25</th>
+                    <th>DESARROLLO WEB</th>
+                </tr>
+                <tr>
+                    <th>CARLOS</th>
+                    <th>27</th>
+                    <th>ALGORITMOS</th>
+                </tr>
+                <tr>
+                    <th>ESTEBAN</th>
+                    <th>30</th>
+                    <th>SEMINARIO</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
