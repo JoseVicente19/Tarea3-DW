@@ -1,44 +1,24 @@
 {% extends 'base.html' %}
-{% block contenido%}
-<h1>Administracion</h1>
+{% block contenido %}
 <h2>LISTA DE ADMINISTRADORES</h2>
-<table border="1">
-    <div>
-        <table class="table">
-            <thead>
-
-                <tr>
-                    <th>NOMBRE</th>
-                    <th>EDAD</th>
-                    <th>DEPARTAMENTO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>JUAN</th>
-                    <th>28</th>
-                    <th>CONTABILIDAD</th>
-                </tr>
-                <tr>
-                    <th>INGRID</th>
-                    <th>25</th>
-                    <th>ADMINISTRACION</th>
-                </tr>
-                <tr>
-                    <th>MARIA</th>
-                    <th>24</th>
-                    <th>GERENCIA</th>
-                </tr>
-                <tr>
-                    <th>ANGEL</th>
-                    <th>30</th>
-                    <th>SOPORTE TECNICO</th>
-                </tr>
-                <tr>
-                    <th>JHONATAN</th>
-                    <th>36</th>
-                    <th>LIMPIEZA</th>
-                </tr>
-        </table>
-    </div>
-    {% endblock %}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>EDAD</th>
+                <th>DEPARTAMENTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for admin in lista_administradores %}
+            <tr>
+                <td>{{ admin.nombre }}</td>
+                <td>{{ admin.edad }}</td>
+                <td>{{ admin.departamento }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

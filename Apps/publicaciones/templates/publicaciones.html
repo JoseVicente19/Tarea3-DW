@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>LISTA DE PUBLICACIONES</h2>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>TITULO</th>
+                <th>FECHA DE PUBLICACION</th>
+                <th>AUTOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for publi in lista_publicaciones %}
+            <tr>
+                <td>{{ publi.titulo }}</td>
+                <td>{{ publi.fecha_publicacion }}</td>
+                <td>{{ publi.autor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

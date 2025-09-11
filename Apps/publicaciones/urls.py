@@ -16,14 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Apps.publicaciones import views
+from .views import PubliView
 
+app_name='publicaciones'
 urlpatterns = [
-    path('', include('Apps.home.urls')),
-    path('admin/', admin.site.urls),
-    path('home/', include('Apps.home.urls', 'home')),
-    path('informacion/', include('Apps.informacion.urls', 'informacion')),
-    path('estudiantes/', include('Apps.estudiantes.urls', 'estudiantes')),
-    path('administradores/', include('Apps.administradores.urls', 'administradores')),
-    path('publicaciones/', include('Apps.publicaciones.urls', 'publicaciones')),
-
+    path('', PubliView.as_view(), name='publiapp')
 ]

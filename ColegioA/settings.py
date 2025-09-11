@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Apps.informacion',
     'Apps.estudiantes',
     'Apps.administradores',
+    'Apps.publicaciones',
 
 
 
@@ -84,8 +85,12 @@ WSGI_APPLICATION = 'ColegioA.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',   # Indica que usarás MySQL
+        'NAME': 'colegioa',                    # El nombre de tu base de datos
+        'USER': 'root',                        # El nombre de usuario que creaste en MySQL
+        'PASSWORD': '1234',                    # La contraseña de ese usuario
+        'HOST': 'localhost',                    # Si tu BD está en tu máquina, usa 'localhost'
+        'PORT': '3306',                          # El puerto por defecto de MySQL es 3306
     }
 }
 

@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
-
 # Create your views here.
 
-class AdminView(TemplateView):
-    template_name='admin.html'
+from django.views.generic import ListView
+from .models import Administradores
+
+class AdminView(ListView):
+    model = Administradores
+    template_name = 'admin.html'
+    context_object_name = 'lista_administradores'

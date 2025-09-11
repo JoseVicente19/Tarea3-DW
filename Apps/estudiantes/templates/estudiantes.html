@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
+
 {% block contenido %}
 <h2>LISTADO DE ESTUDIANTES</h2>
 <table border="1">
     <div>
         <table class="table">
             <thead>
-
                 <tr>
                     <th>NOMBRE</th>
                     <th>EDAD</th>
@@ -13,32 +13,15 @@
                 </tr>
             </thead>
             <tbody>
+                {% for estudiante in lista_estudiantes %}
                 <tr>
-                    <th>JOSE</th>
-                    <th>26</th>
-                    <th>MATEMATICAS</th>
+                    <td>{{ estudiante.nombre }}</td>
+                    <td>{{ estudiante.edad }}</td>
+                    <td>{{ estudiante.curso }}</td>
                 </tr>
-                <tr>
-                    <th>DANIEL</th>
-                    <th>25</th>
-                    <th>BASES DE DATOS I</th>
-                </tr>
-                <tr>
-                    <th>ANA</th>
-                    <th>25</th>
-                    <th>DESARROLLO WEB</th>
-                </tr>
-                <tr>
-                    <th>CARLOS</th>
-                    <th>27</th>
-                    <th>ALGORITMOS</th>
-                </tr>
-                <tr>
-                    <th>ESTEBAN</th>
-                    <th>30</th>
-                    <th>SEMINARIO</th>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
-    {% endblock %}
+</table>
+{% endblock %}
