@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Apps.publicaciones import views
-from .views import PubliView
+from .views import PubliView, CrearPubliView
 
 app_name='publicaciones'
 urlpatterns = [
-    path('', PubliView.as_view(), name='publiapp')
+    path('', PubliView.as_view(), name='publiapp'),
+    path('/crear', CrearPubliView.as_view(), name='crearpubli')
+
 ]

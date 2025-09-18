@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Apps.administradores import views
-from .views import AdminView
+from .views import AdminView, CrearAdminView
 
 app_name='administradores'
 urlpatterns = [
-    path('', AdminView.as_view(), name='adminapp')
+    path('', AdminView.as_view(), name='adminapp'),
+    path('crear/', CrearAdminView.as_view(), name='crearadmin')
+
 ]

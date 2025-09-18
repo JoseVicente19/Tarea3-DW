@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Apps.estudiantes import views
-from .views import EstuView
+from .views import EstuView, CrearEstudianteView
 
 app_name='estudiantes'
 urlpatterns = [
-    path('', EstuView.as_view(), name='estuapp')
+    path('', EstuView.as_view(), name='estuapp'),
+    path('crear/', CrearEstudianteView.as_view(), name='crear')
 ]

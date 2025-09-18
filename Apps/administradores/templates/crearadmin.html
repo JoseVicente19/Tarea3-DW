@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLEGIO</title>
+</head>
+<body>
+    <h1>CREAR ADMINISTRADOR</h1>
+    <form method="post">
+        {% csrf_token %}
+        Nombre {{ form.nombre }}
+        Edad {{ form.edad }}
+        departamento {{ form.departamento }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'administradores:adminapp' %}">VER LISTA DE ADMINISTRADORES</a>
+</body>
+</html>
