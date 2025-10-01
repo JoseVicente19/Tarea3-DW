@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLEGIO</title>
-</head>
-<body>
-    <h1>Crear Estudiante</h1>
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1>Crear Estudiante</h1>
     <form method="post">
         {% csrf_token %}
         Nombre {{ form.nombre }}
@@ -16,5 +11,6 @@
     </form>
 
     <a href="{% url 'estudiantes:estuapp' %}">VER LISTA DE ESTUDIANTES</a>
-</body>
-</html>
+
+    
+{% endblock %}

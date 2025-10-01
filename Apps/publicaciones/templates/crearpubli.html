@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLEGIO</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block contenido %}
     <h1>CREAR PUBLICACION</h1>
     <form method="post">
         {% csrf_token %}
@@ -16,5 +10,5 @@
     </form>
 
     <a href="{% url 'publicaciones:publiapp' %}">VER LISTA DE PUBLICACIONES</a>
-</body>
-</html>
+
+{% endblock %}
