@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>Detalles del Estudiante</h1>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Nombre: {{ object.nombre }}</h5>
+        <p class="card-text"><strong>Edad:</strong> {{ object.edad }}</p>
+        <p class="card-text"><strong>Curso:</strong> {{ object.curso }}</p>
+        <p class="card-text"><strong>Fecha de Creación:</strong> {{ object.creacion|date:"d/m/Y H:i" }}</p>
+        <a href="{% url 'estudiantes:estuapp' %}" class="btn btn-primary">Volver al Listado</a>
+    </div>
+</div>
+{% endblock %}

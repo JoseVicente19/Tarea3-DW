@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h1>Detalles de la Publicación</h1>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Título: {{ object.titulo }}</h5>
+        <p class="card-text"><strong>Fecha de Publicación:</strong> {{ object.fecha_publicacion }}</p>
+        <p class="card-text"><strong>Autor:</strong> {{ object.autor }}</p>
+        <p class="card-text"><strong>Fecha de Creación:</strong> {{ object.creacion|date:"d/m/Y H:i" }}</p>
+        <a href="{% url 'publicaciones:publiapp' %}" class="btn btn-primary">Volver al Listado</a>
+    </div>
+</div>
+{% endblock %}

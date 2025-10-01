@@ -8,6 +8,8 @@
                 <th>TITULO</th>
                 <th>FECHA DE PUBLICACION</th>
                 <th>AUTOR</th>
+                <th>ACCIONES</th>
+
             </tr>
         </thead>
         <tbody>
@@ -16,6 +18,10 @@
                 <td>{{ publi.titulo }}</td>
                 <td>{{ publi.fecha_publicacion }}</td>
                 <td>{{ publi.autor }}</td>
+                <td>
+                    <a href="{% url 'publicaciones:editarpubli' publi.id %}" class="btn btn-warning">EDITAR</a>
+                    <a href="{% url 'publicaciones:verpubli' publi.pk %}" class="btn btn-info">VER</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

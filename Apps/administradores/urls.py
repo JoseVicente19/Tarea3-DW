@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Apps.administradores import views
-from .views import AdminView, CrearAdminView
+from .views import AdminView, CrearAdminView, EditarAdminView, AdministradorDetailView
 
 app_name='administradores'
 urlpatterns = [
     path('', AdminView.as_view(), name='adminapp'),
-    path('crear/', CrearAdminView.as_view(), name='crearadmin')
+    path('crear/', CrearAdminView.as_view(), name='crearadmin'),
+    path('editar/ <int:pk>' , EditarAdminView.as_view(), name='editaradmin'),
+    path('ver/ <int:pk>', AdministradorDetailView.as_view(), name='veradmin'),
 
 ]

@@ -2,29 +2,30 @@
 
 {% block contenido %}
 <h2>LISTADO DE ESTUDIANTES</h2>
-<table border="1">
-    <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>NOMBRE</th>
-                    <th>EDAD</th>
-                    <th>CURSO</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for estudiante in lista_estudiantes %}
-                <tr>
-                    <td>{{ estudiante.nombre }}</td>
-                    <td>{{ estudiante.edad }}</td>
-                    <td>{{ estudiante.curso }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>NOMBRE</th>
+            <th>EDAD</th>
+            <th>CURSO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estudiante in lista_estudiantes %}
+        <tr>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.edad }}</td>
+            <td>{{ estudiante.curso }}</td>
+            <td>
+                <a href="{% url 'estudiantes:editar' estudiante.id %}" class="btn btn-warning">EDITAR</a>
+                <a href="{% url 'estudiantes:ver' estudiante.pk %}" class="btn btn-info">VER</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
-<h2>CREAR CLIENTE ACA</h2>
-<a href="{% url 'estudiantes:crear' %}">CREAR</a>
+<h2>CREAR ESTUDIANTE ACA</h2>
+<a href="{% url 'estudiantes:crear' %}" class="btn btn-success">CREAR</a>
 {% endblock %}

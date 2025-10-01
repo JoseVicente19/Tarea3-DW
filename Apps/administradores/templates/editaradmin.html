@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+    <h1>EDITAR ADMINISTRADOR</h1>
+    <form method="post">
+        {% csrf_token %}
+        Nombre {{ form.nombre }}
+        Edad {{ form.edad }}
+        departamento {{ form.departamento }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'administradores:adminapp' %}">VOLVER A LA LISTA DE ADMINISTRADORES</a>
+
+{% endblock %}

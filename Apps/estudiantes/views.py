@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from .models import estudiantes # Asegúrate que el nombre del modelo sea correcto, por defecto es 'Estudiante' si tu modelo se llama así.
 from .forms import EstudianteForm
 from django.urls import reverse_lazy
@@ -13,3 +13,15 @@ class CrearEstudianteView(CreateView):
     template_name = 'crear.html'
     form_class = EstudianteForm
     success_url = reverse_lazy('estudiantes:estuapp')
+
+
+class EditarEstudianteView(UpdateView):
+    template_name = 'editar.html'
+    model = estudiantes
+    form_class = EstudianteForm
+    success_url = reverse_lazy('estudiantes:estuapp')
+
+
+class VerDetailView(DetailView):
+    model = estudiantes
+    template_name = 'ver.html'

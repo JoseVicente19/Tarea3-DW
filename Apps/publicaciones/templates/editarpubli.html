@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <h1>EDITAR PUBLICACION</h1>
+    <form method="post">
+        {% csrf_token %}
+        titulo {{ form.titulo }}
+        fecha de publicacion  {{ form.fecha_publicacion }}
+        autor {{ form.autor }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'publicaciones:publiapp' %}">VOLVER A LA LISTA DE PUBLICACIONES</a>
+
+{% endblock %}
