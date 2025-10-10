@@ -11,3 +11,4 @@ class estudiantes(models.Model):
 
 class Meta:
         db_table = 'estudiantes' 
+
