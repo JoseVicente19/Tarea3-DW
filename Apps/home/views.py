@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 from .models import Usuario
 from .forms import RegistroForm
+from django.contrib.auth.views import LoginView
 # Create your views here.
 
 class HomeView(TemplateView):
@@ -12,3 +13,6 @@ class RegistroView(CreateView):
     model = Usuario
     form_class = RegistroForm
     success_url = reverse_lazy('home:homeapp')
+
+class LoginView(LoginView):
+    template_name = 'login.html'

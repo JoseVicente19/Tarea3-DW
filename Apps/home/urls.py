@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Apps.home import views
-from .views import HomeView, RegistroView
+from .views import HomeView, RegistroView, LoginView
 
 app_name='home'
 urlpatterns = [
     path('', HomeView.as_view(), name='homeapp'),
-    path('registro/', RegistroView.as_view(), name='registro')
+    path('registro/', RegistroView.as_view(), name='registro'),
+    path('login/', LoginView.as_view(), name='login'),
+
 
 ]
